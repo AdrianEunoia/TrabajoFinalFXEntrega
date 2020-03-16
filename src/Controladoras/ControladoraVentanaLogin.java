@@ -82,6 +82,14 @@ public class ControladoraVentanaLogin implements Initializable{
                     conexion.closeConnection();
                     if (rs.next()) {
                         System.out.println("Login correcto");
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../layouts/layout_ventana_landing.fxml"));
+                        try {
+                            borderPane.setCenter(loader.load());
+                            ControladoraVentanaLanding controladoraVentanaLanding = loader.getController();
+                            controladoraVentanaLanding.setConection(conexion);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }else{
                         Alert dialogoError = new Alert(Alert.AlertType.ERROR);
                         dialogoError.setTitle("Atención");

@@ -15,16 +15,14 @@ public class Conexion {
     String dtbs = "trabajofinalfx";
 
     public Boolean realizarConexion(){
-        try
-        {
+        try {
             Class.forName("com.mysql.jdbc.Driver");
             String newConnectionURL = "jdbc:mysql://" + host + "/" + dtbs
                     + "?" + "user=" + user + "&password=" + pass + "&useSSL=false";
             conn = (java.sql.Connection) DriverManager.getConnection(newConnectionURL);
             return true;
         }
-        catch(SQLException | ClassNotFoundException ex)
-        {
+        catch(SQLException | ClassNotFoundException ex) {
             System.out.println("Error la Base de Datos");
             ex.printStackTrace();
             return false;

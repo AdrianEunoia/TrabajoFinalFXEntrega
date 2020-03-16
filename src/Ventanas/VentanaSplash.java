@@ -14,6 +14,7 @@ public class VentanaSplash extends Application {
         Scene scene = new Scene(root,600,400);
         primaryStage.setScene(scene);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
+        primaryStage.setTitle("Trabajo Final de JAVAFX");
         primaryStage.show();
     }
 
